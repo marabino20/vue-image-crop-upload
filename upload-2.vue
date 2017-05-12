@@ -570,6 +570,14 @@ export default {
             }
             fr.readAsDataURL(file);
         },
+
+        setSourceImgFromCamera(data) {
+            let that = this;
+            this.createImgUrl = data;
+            this.sourceImgUrl = data;
+            that.startCrop();
+        },
+        
         // 剪裁前准备工作
         startCrop() {
             let that = this,
