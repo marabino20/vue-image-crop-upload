@@ -891,7 +891,7 @@ export default {
                         that.$emit('crop-upload-success', resData, field, ki);
                     }
 
-                },
+                }).catch(
                 // 上传失败
                 function(sts) {
                     if (that.value) {
@@ -969,8 +969,8 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 330px;
     padding: 25px;
     background-color: #fff;
     border-radius: 2px;
