@@ -255,9 +255,28 @@ export default {
                         lowestPx: '图片最低像素为（宽*高）：'
                     }
                 },
+                es: {
+                    hint: 'Haga clic, o arrastre el archivo aquí',
+                    loading: 'Cargando ...',
+                    noSupported: 'El navegador no es compatible, utilice IE10 + u otros navegadores',
+                    success: 'Subida exitosa',
+                    fail: 'Subida fallida',
+                    preview: 'Previzualizacíon',
+                    btn: {
+                        off: 'Cancelar',
+                        close: 'Cerrar',
+                        back: 'Atras',
+                        save: 'Guardar'
+                    },
+                    error: {
+                        onlyImg: 'Solo imagen',
+                        outOfSize: 'La imagen excede el límite de tamaño: ',
+                        lowestPx: 'El píxel más bajo de la imagen: '
+                    }
+                },
                 en: {
                     hint: 'Click, or drag the file here',
-                    loading: 'Uploading……',
+                    loading: 'Uploading ...',
                     noSupported: 'Browser does not support, please use IE10+ or other browsers',
                     success: 'Upload success',
                     fail: 'Upload failed',
