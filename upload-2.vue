@@ -8,7 +8,7 @@
         <div class="vicp-step1" v-show="step == 1">
             <div class="vicp-drop-area" @dragleave="preventDefault" @dragover="preventDefault" @dragenter="preventDefault" @click="handleClick" @drop="handleChange">
                 <i class="vicp-icon1" v-show="loading != 1">
-					<i class="vicp-icon1-arrow"></i>
+					      <i class="vicp-icon1-arrow"></i>
                 <i class="vicp-icon1-body"></i>
                 <i class="vicp-icon1-bottom"></i>
                 </i>
@@ -41,9 +41,9 @@
                             @touchend="createImg"
                             @touchcancel="createImg"
                             @mousedown="imgStartMove"
-							@mousemove="imgMove"
-							@mouseup="createImg"
-							@mouseout="createImg"
+                            @mousemove="imgMove"
+                            @mouseup="createImg"
+                            @mouseout="createImg"
                             ref="img">
                         <div class="vicp-img-shade vicp-img-shade-1" :style="sourceImgShadeStyle"></div>
                         <div class="vicp-img-shade vicp-img-shade-2" :style="sourceImgShadeStyle"></div>
@@ -256,16 +256,16 @@ export default {
                     }
                 },
                 es: {
-                    hint: 'Haga clic, o arrastre el archivo aquí',
+                    hint: 'Presione aquí para comenzar',
                     loading: 'Cargando ...',
                     noSupported: 'El navegador no es compatible, utilice IE10 + u otros navegadores',
-                    success: 'Subida exitosa',
-                    fail: 'Subida fallida',
-                    preview: 'Previzualizacíon',
+                    success: 'Envío exitoso',
+                    fail: 'Envío fallido',
+                    preview: 'Vista Previa',
                     btn: {
                         off: 'Cancelar',
                         close: 'Cerrar',
-                        back: 'Atras',
+                        back: 'Volver',
                         save: 'Guardar'
                     },
                     error: {
@@ -1098,8 +1098,8 @@ export default {
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
           position: relative;
           display: block;
-          width: 240px;
-          height: 180px;
+          width: 340px;
+          height: 280px;
           background-color: #e5e5e0;
           overflow: hidden; }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container .vicp-img {
@@ -1380,8 +1380,9 @@ export default {
         text-align: center;
         cursor: pointer;
         font-size: 14px;
-        color: #4a7;
-        border-radius: 2px;
+        color: #ffffff;
+        background-color: teal;
+        border-radius: 4px;
         overflow: hidden;
         -webkit-user-select: none;
            -moz-user-select: none;
