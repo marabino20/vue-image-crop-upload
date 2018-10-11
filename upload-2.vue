@@ -6,71 +6,130 @@
         </div>
 
         <div class="vicp-step1" v-show="step == 1">
-            <div class="vicp-drop-area" @dragleave="preventDefault" @dragover="preventDefault" @dragenter="preventDefault" @click="handleClick" @drop="handleChange">
-                <i class="vicp-icon1" v-show="loading != 1">
-					<i class="vicp-icon1-arrow"></i>
+          <div 
+            class="vicp-drop-area" 
+            @dragleave="preventDefault" 
+            @dragover="preventDefault" 
+            @dragenter="preventDefault" 
+            @click="handleClick" 
+            @drop="handleChange">
+              <i class="vicp-icon1" v-show="loading != 1">
+                <i class="vicp-icon1-arrow"></i>
                 <i class="vicp-icon1-body"></i>
                 <i class="vicp-icon1-bottom"></i>
-                </i>
-                <span class="vicp-hint" v-show="loading !== 1">{{ lang.hint }}</span>
-                <span class="vicp-no-supported-hint" v-show="!isSupported">{{ lang.noSupported }}</span>
-                <input type="file" v-show="false" v-if="step == 1" @change="handleChange" ref="fileinput">
+              </i>
+              <span 
+                class="vicp-hint" 
+                v-show="loading !== 1">
+                  {{ lang.hint }}
+              </span>
+              <span 
+                class="vicp-no-supported-hint" 
+                v-show="!isSupported">
+                  {{ lang.noSupported }}
+              </span>
+              <input 
+                type="file"
+                v-show="false" 
+                v-if="step == 1" 
+                @change="handleChange" 
+                ref="fileinput">
             </div>
-            <div class="vicp-error" v-show="hasError">
-                <i class="vicp-icon2"></i> {{ errorMsg }}
+            <div 
+              class="vicp-error" 
+              v-show="hasError">
+                <i class="vicp-icon2"></i>
+                {{ errorMsg }}
             </div>
             <div class="vicp-operate">
-                <a @click="off" @mousedown="ripple">{{ lang.btn.off }}</a>
+                <a 
+                  @click="off" 
+                  @mousedown="ripple">
+                    {{ lang.btn.off }}
+                </a>
             </div>
         </div>
 
         <div class="vicp-step2" v-if="step == 2">
-            <div class="vicp-crop">
-                <div class="vicp-crop-left" v-show="true">
-                    <div class="vicp-img-container">
-                        <img :src="sourceImgUrl" :style="sourceImgStyle" class="vicp-img" draggable="false"
-                            @drag="preventDefault"
-                            @dragstart="preventDefault"
-                            @dragend="preventDefault"
-                            @dragleave="preventDefault"
-                            @dragover="preventDefault"
-                            @dragenter="preventDefault"
-                            @drop="preventDefault"
-                            @touchstart="imgStartMove"
-                            @touchmove="imgMove"
-                            @touchend="createImg"
-                            @touchcancel="createImg"
-                            @mousedown="imgStartMove"
-							@mousemove="imgMove"
-							@mouseup="createImg"
-							@mouseout="createImg"
-                            ref="img">
-                        <div class="vicp-img-shade vicp-img-shade-1" :style="sourceImgShadeStyle"></div>
-                        <div class="vicp-img-shade vicp-img-shade-2" :style="sourceImgShadeStyle"></div>
+          <div class="vicp-crop">
+            <div class="left-container">
+              <div class="vicp-crop-left" v-show="true">
+                <div class="vicp-img-container">
+                  <img 
+                    :src="sourceImgUrl" 
+                    :style="sourceImgStyle" 
+                    class="vicp-img" 
+                    draggable="false"
+                    ref="img"
+                    @drag="preventDefault"
+                    @dragstart="preventDefault"
+                    @dragend="preventDefault"
+                    @dragleave="preventDefault"
+                    @dragover="preventDefault"
+                    @dragenter="preventDefault"
+                    @drop="preventDefault"
+                    @touchstart="imgStartMove"
+                    @touchmove="imgMove"
+                    @touchend="createImg"
+                    @touchcancel="createImg"
+                    @mousedown="imgStartMove"
+                    @mousemove="imgMove"
+                    @mouseup="createImg"
+                    @mouseout="createImg">
+                    <div 
+                      class="vicp-img-shade vicp-img-shade-1" 
+                      :style="sourceImgShadeStyle">
                     </div>
-                    <div class="vicp-range">
-                        <input type="range" :value="scale.range" step="1" min="0" max="100" @input="zoomChange">
-                        <i @mousedown="startZoomSub" @mouseout="endZoomSub" @mouseup="endZoomSub" class="vicp-icon5"></i>
-                        <i @mousedown="startZoomAdd" @mouseout="endZoomAdd" @mouseup="endZoomAdd" class="vicp-icon6"></i>
-                    </div>
-                </div>
-                <div class="vicp-crop-right" v-show="true">
-                    <div class="vicp-preview">
-                        <div class="vicp-preview-item">
-                            <img :src="createImgUrl" :style="previewStyle">
-                            <span>{{ lang.preview }}</span>
-                        </div>
-                        <div class="vicp-preview-item" v-if="!noCircle">
-                            <img :src="createImgUrl" :style="previewStyle">
-                            <span>{{ lang.preview }}</span>
-                        </div>
+                    <div 
+                      class="vicp-img-shade vicp-img-shade-2" 
+                      :style="sourceImgShadeStyle">
                     </div>
                 </div>
+
+                <div class="vicp-range">
+                  <input 
+                    type="range" 
+                    :value="scale.range" 
+                    step="1" 
+                    min="0" 
+                    max="100" 
+                    @input="zoomChange">
+                      <i 
+                        @mousedown="startZoomSub" 
+                        @mouseout="endZoomSub" 
+                        @mouseup="endZoomSub" 
+                        class="vicp-icon5">
+                      </i>
+                      <i 
+                        @mousedown="startZoomAdd" 
+                        @mouseout="endZoomAdd" 
+                        @mouseup="endZoomAdd" 
+                        class="vicp-icon6">
+                      </i>
+                </div>
+              </div>
             </div>
-            <div class="vicp-operate">
-                <a @click="setStep(1)" @mousedown="ripple">{{ lang.btn.back }}</a>
-                <a class="vicp-operate-btn" @click="upload" @mousedown="ripple">{{ lang.btn.save }}</a>
+
+            <div class="right-container">
+              <div class="vicp-crop-right" v-show="true">
+                <div class="vicp-preview">
+                  <div class="vicp-preview-item">
+                    <img :src="createImgUrl" :style="previewStyle">
+                    <span>{{ lang.preview }}</span>
+                  </div>
+                  <div class="vicp-preview-item" v-if="!noCircle">
+                    <img :src="createImgUrl" :style="previewStyle">
+                    <span>{{ lang.preview }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
+
+          </div>
+          <div class="vicp-operate">
+              <a @click="setStep(1)" @mousedown="ripple">{{ lang.btn.back }}</a>
+              <a class="vicp-operate-btn" @click="upload" @mousedown="ripple">{{ lang.btn.save }}</a>
+          </div>
         </div>
 
         <div class="vicp-step3" v-if="step == 3">
@@ -1381,8 +1440,8 @@ export default {
         cursor: pointer;
         font-size: 14px;
         color: #ffffff;
-        background-color: teal;
-        border-radius: 4px;
+        background-color: #00897b;
+        border-radius: 2px;
         overflow: hidden;
         -webkit-user-select: none;
            -moz-user-select: none;
@@ -1466,5 +1525,12 @@ export default {
     transition: opacity 1.2s ease-out, transform 0.6s ease-out;
     transition: opacity 1.2s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out; }
 
+  .left-container {
+    text-align: center;
+  }
+
+  .right-container {
+    text-align: center;
+  }
 
 </style>
