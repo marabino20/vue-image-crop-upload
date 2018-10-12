@@ -1533,21 +1533,25 @@ export default {
 
   @media (max-width: 600px) {
     .left-container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 240px;
       height: 270px;
-      padding: 25px 40px;
-      border-radius: 20px;
+      padding: 25px 0px
     }
 
     .right-container {
-      padding: 20px 40px;
       margin-top: 20px;
-      border-radius: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 240px;
       height: 160px;
     }
 
     .main-left, .main-right {
       width: 100%;
       border: 2px solid #eeeeee;
+      border-radius: 20px;
     }
 
     .vue-image-crop-upload {
