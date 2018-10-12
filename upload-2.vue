@@ -1159,7 +1159,7 @@ export default {
           display: block;
           width: 240px;
           height: 180px;
-          background-color: #00897b7c;
+          background-color: #e5e5e0;
           overflow: hidden; }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container .vicp-img {
             position: absolute;
@@ -1336,7 +1336,7 @@ export default {
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range input[type=range]:focus::-ms-fill-upper {
               background-color: rgba(68, 170, 119, 0.25); }
       .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-right {
-        float: left; }
+        float: right; }
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-right .vicp-preview {
           height: 150px;
           overflow: hidden; }
@@ -1540,6 +1540,26 @@ export default {
       border-radius: 20px;
       height: 160px;
     }
+
+    .vue-image-crop-upload {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    .vue-image-crop-upload .vicp-wrap {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
+
+.vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area,
+.vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-drop-area,
+.vue-image-crop-upload .vicp-wrap .vicp-step3 .vicp-upload {
+  height: auto !important;
+}
+
+.vicp-img-container img {
+  max-width: 400% !important;
+}
   
 </style>
