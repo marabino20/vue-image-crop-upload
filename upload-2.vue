@@ -7,6 +7,7 @@
 
         <div class="vicp-step1" v-show="step == 1">
           <div 
+            id="main-drop-area"
             class="vicp-drop-area" 
             @dragleave="preventDefault" 
             @dragover="preventDefault" 
@@ -565,6 +566,9 @@ export default {
                 this.reset();
             }
         }
+    },
+    mounted () {
+      document.getElementById("main-drop-area").click();
     },
     methods: {
         // 点击波纹效果
