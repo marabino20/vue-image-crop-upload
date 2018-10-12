@@ -1575,11 +1575,9 @@ export default {
     }
 
     h1.main-title {
-      font-size: 1.2em;
-      margin-bottom: 0px;
-      margin: 0px;
-      padding: 10px;
-      border-radius: 18px 18px 0px 0px;
+      font-size: 1.2em !important;
+      margin: 0px 0px 0px 0px !important;
+      padding: 10px !important;
     }
   }
 
