@@ -1525,12 +1525,21 @@ export default {
     transition: opacity 1.2s ease-out, transform 0.6s ease-out;
     transition: opacity 1.2s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out; }
 
-  .left-container {
-    text-align: center;
-  }
+  @media (min-width: 600px) {
+    .left-container {
+      height: 270px;
+      border: 2px solid #eeeeee;
+      padding: 25px 60px;
+      border-radius: 20px;
+    }
 
-  .right-container {
-    text-align: center;
+    .right-container {
+      padding: 20px 65px;
+      border: 2px solid #eeeeee;
+      margin-top: 20px;
+      border-radius: 20px;
+      height: 160px;
+    }
   }
-
+  
 </style>
