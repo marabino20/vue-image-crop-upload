@@ -1159,7 +1159,7 @@ export default {
           display: block;
           width: 240px;
           height: 180px;
-          background-color: #e5e5e0;
+          background-color: #00897b7c;
           overflow: hidden; }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container .vicp-img {
             position: absolute;
@@ -1336,7 +1336,7 @@ export default {
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range input[type=range]:focus::-ms-fill-upper {
               background-color: rgba(68, 170, 119, 0.25); }
       .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-right {
-        float: right; }
+        float: left; }
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-right .vicp-preview {
           height: 150px;
           overflow: hidden; }
@@ -1529,12 +1529,12 @@ export default {
     .left-container {
       height: 270px;
       border: 2px solid #eeeeee;
-      padding: 25px 60px;
+      padding: 25px 40px;
       border-radius: 20px;
     }
 
     .right-container {
-      padding: 20px 65px;
+      padding: 20px 40px;
       border: 2px solid #eeeeee;
       margin-top: 20px;
       border-radius: 20px;
