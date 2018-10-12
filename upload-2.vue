@@ -53,6 +53,7 @@
         <div class="vicp-step2" v-if="step == 2">
           <div class="vicp-crop">
             <div class="main-left">
+              <h1 class="main-title">{{ lang.mainTitle }}</h1>
               <div class="left-container">
                 <div class="vicp-crop-left" v-show="true">
                   <div class="vicp-img-container">
@@ -300,6 +301,7 @@ export default {
             ],
             langBag = {
                 zh: {
+                    mainTitle: '裁剪图像',
                     hint: '点击，或拖动图片至此处',
                     loading: '正在上传……',
                     noSupported: '浏览器不支持该功能，请使用IE10以上或其他现在浏览器！',
@@ -319,6 +321,7 @@ export default {
                     }
                 },
                 es: {
+                    mainTitle: 'Recortar Imagen',
                     hint: 'Presione aquí para comenzar',
                     loading: 'Cargando ...',
                     noSupported: 'El navegador no es compatible, utilice IE10 + u otros navegadores',
@@ -338,6 +341,7 @@ export default {
                     }
                 },
                 en: {
+                    mainTitle: 'Crop Image',
                     hint: 'Click, or drag the file here',
                     loading: 'Uploading ...',
                     noSupported: 'Browser does not support, please use IE10+ or other browsers',
@@ -357,6 +361,7 @@ export default {
                     }
                 },
                 ru: {
+                    mainTitle: 'Изображение обреза',
                     hint: 'Нажмите, или перетащите файл в это окно',
                     loading: 'Загружаю……',
                     noSupported: 'Ваш браузер не поддерживается, пожалуйста, используйте IE10 + или другие браузеры',
@@ -1566,6 +1571,7 @@ export default {
     .vue-image-crop-upload .vicp-wrap {
       width: 100% !important;
       height: 100% !important;
+      border-radius: 0px !important;
     }
   }
 
@@ -1577,6 +1583,16 @@ export default {
 
 .vicp-img-container img {
   max-width: 400% !important;
+}
+
+h1.main-title {
+  text-align: center;
+  font-size: 1.1em;
+  color: #ffffff;
+  background-color: #00897b;
+  margin: 0px;
+  padding: 10px;
+  border-radius: 18px 18px 0px 0px;
 }
   
 </style>
