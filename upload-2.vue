@@ -1525,7 +1525,7 @@ export default {
     transition: opacity 1.2s ease-out, transform 0.6s ease-out;
     transition: opacity 1.2s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out; }
 
-  @media (min-width: 600px) {
+  @media (max-width: 600px) {
     .left-container {
       height: 270px;
       border: 2px solid #eeeeee;
