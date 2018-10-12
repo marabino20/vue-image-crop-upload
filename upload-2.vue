@@ -52,74 +52,78 @@
 
         <div class="vicp-step2" v-if="step == 2">
           <div class="vicp-crop">
-            <div class="left-container">
-              <div class="vicp-crop-left" v-show="true">
-                <div class="vicp-img-container">
-                  <img 
-                    :src="sourceImgUrl" 
-                    :style="sourceImgStyle" 
-                    class="vicp-img" 
-                    draggable="false"
-                    ref="img"
-                    @drag="preventDefault"
-                    @dragstart="preventDefault"
-                    @dragend="preventDefault"
-                    @dragleave="preventDefault"
-                    @dragover="preventDefault"
-                    @dragenter="preventDefault"
-                    @drop="preventDefault"
-                    @touchstart="imgStartMove"
-                    @touchmove="imgMove"
-                    @touchend="createImg"
-                    @touchcancel="createImg"
-                    @mousedown="imgStartMove"
-                    @mousemove="imgMove"
-                    @mouseup="createImg"
-                    @mouseout="createImg">
-                    <div 
-                      class="vicp-img-shade vicp-img-shade-1" 
-                      :style="sourceImgShadeStyle">
-                    </div>
-                    <div 
-                      class="vicp-img-shade vicp-img-shade-2" 
-                      :style="sourceImgShadeStyle">
-                    </div>
-                </div>
+            <div class="main-left">
+              <div class="left-container">
+                <div class="vicp-crop-left" v-show="true">
+                  <div class="vicp-img-container">
+                    <img 
+                      :src="sourceImgUrl" 
+                      :style="sourceImgStyle" 
+                      class="vicp-img" 
+                      draggable="false"
+                      ref="img"
+                      @drag="preventDefault"
+                      @dragstart="preventDefault"
+                      @dragend="preventDefault"
+                      @dragleave="preventDefault"
+                      @dragover="preventDefault"
+                      @dragenter="preventDefault"
+                      @drop="preventDefault"
+                      @touchstart="imgStartMove"
+                      @touchmove="imgMove"
+                      @touchend="createImg"
+                      @touchcancel="createImg"
+                      @mousedown="imgStartMove"
+                      @mousemove="imgMove"
+                      @mouseup="createImg"
+                      @mouseout="createImg">
+                      <div 
+                        class="vicp-img-shade vicp-img-shade-1" 
+                        :style="sourceImgShadeStyle">
+                      </div>
+                      <div 
+                        class="vicp-img-shade vicp-img-shade-2" 
+                        :style="sourceImgShadeStyle">
+                      </div>
+                  </div>
 
-                <div class="vicp-range">
-                  <input 
-                    type="range" 
-                    :value="scale.range" 
-                    step="1" 
-                    min="0" 
-                    max="100" 
-                    @input="zoomChange">
-                      <i 
-                        @mousedown="startZoomSub" 
-                        @mouseout="endZoomSub" 
-                        @mouseup="endZoomSub" 
-                        class="vicp-icon5">
-                      </i>
-                      <i 
-                        @mousedown="startZoomAdd" 
-                        @mouseout="endZoomAdd" 
-                        @mouseup="endZoomAdd" 
-                        class="vicp-icon6">
-                      </i>
+                  <div class="vicp-range">
+                    <input 
+                      type="range" 
+                      :value="scale.range" 
+                      step="1" 
+                      min="0" 
+                      max="100" 
+                      @input="zoomChange">
+                        <i 
+                          @mousedown="startZoomSub" 
+                          @mouseout="endZoomSub" 
+                          @mouseup="endZoomSub" 
+                          class="vicp-icon5">
+                        </i>
+                        <i 
+                          @mousedown="startZoomAdd" 
+                          @mouseout="endZoomAdd" 
+                          @mouseup="endZoomAdd" 
+                          class="vicp-icon6">
+                        </i>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="right-container">
-              <div class="vicp-crop-right" v-show="true">
-                <div class="vicp-preview">
-                  <div class="vicp-preview-item">
-                    <img :src="createImgUrl" :style="previewStyle">
-                    <span>{{ lang.preview }}</span>
-                  </div>
-                  <div class="vicp-preview-item" v-if="!noCircle">
-                    <img :src="createImgUrl" :style="previewStyle">
-                    <span>{{ lang.preview }}</span>
+            
+            <div class="main-right">
+              <div class="right-container">
+                <div class="vicp-crop-right" v-show="true">
+                  <div class="vicp-preview">
+                    <div class="vicp-preview-item">
+                      <img :src="createImgUrl" :style="previewStyle">
+                      <span>{{ lang.preview }}</span>
+                    </div>
+                    <div class="vicp-preview-item" v-if="!noCircle">
+                      <img :src="createImgUrl" :style="previewStyle">
+                      <span>{{ lang.preview }}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1530,17 +1534,20 @@ export default {
   @media (max-width: 600px) {
     .left-container {
       height: 270px;
-      border: 2px solid #eeeeee;
       padding: 25px 40px;
       border-radius: 20px;
     }
 
     .right-container {
       padding: 20px 40px;
-      border: 2px solid #eeeeee;
       margin-top: 20px;
       border-radius: 20px;
       height: 160px;
+    }
+
+    .main-left, .main-right {
+      width: 100%;
+      border: 2px solid #eeeeee;
     }
 
     .vue-image-crop-upload {
