@@ -1541,16 +1541,16 @@ export default {
       margin-left: auto;
       margin-right: auto;
       width: 240px;
-      height: 270px;
-      padding: 25px 0px
+      height: 260px;
+      padding: 16px 0px
     }
 
     .right-container {
-      margin-top: 20px;
+      margin-top: 10px;
       margin-left: auto;
       margin-right: auto;
       width: 220px;
-      height: 140px;
+      height: 135px;
     }
 
     .main-left, .main-right {
@@ -1573,6 +1573,16 @@ export default {
       height: 100% !important;
       border-radius: 0px !important;
     }
+
+    h1.main-title {
+      text-align: center;
+      font-size: 1.1em;
+      color: #ffffff;
+      background-color: #00897b;
+      margin: 0px;
+      padding: 10px;
+      border-radius: 18px 18px 0px 0px;
+    }
   }
 
 .vue-image-crop-upload .vicp-wrap .vicp-step1 .vicp-drop-area,
@@ -1590,8 +1600,8 @@ h1.main-title {
   font-size: 1.1em;
   color: #ffffff;
   background-color: #00897b;
-  margin: 0px;
-  padding: 10px;
+  margin-bottom: 16px;
+  padding: 5px;
   border-radius: 18px 18px 0px 0px;
 }
   
