@@ -1531,7 +1531,7 @@ export default {
     transition: opacity 1.2s ease-out, transform 0.6s ease-out;
     transition: opacity 1.2s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out; }
 
-  @media (max-width: 666px) {
+  @media (max-width: 567px) {
     .left-container {
       margin-left: auto;
       margin-right: auto;
