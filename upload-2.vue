@@ -151,7 +151,7 @@
                     <i class="vicp-icon3"></i> {{ lang.success }}
                 </div>
             </div>
-            <div class="vicp-operate">
+            <div class="vicp-operate" v-show="showControl">
                 <a @click="setStep(2)" @mousedown="ripple">{{ lang.btn.back }}</a>
                 <a @click="off" @mousedown="ripple">{{ lang.btn.close }}</a>
             </div>
@@ -461,7 +461,9 @@ export default {
                 minHeight: 0,
                 naturalWidth: 0, //原宽
                 naturalHeight: 0
-            }
+            },
+
+            showControl: true
         }
     },
     computed: {
@@ -954,6 +956,7 @@ export default {
             that.setStep(3);
             that.$emit('crop-success', createImgUrl, field, ki);
             new Promise(function(resolve, reject) {
+                that.showControl = false
                 let client = new XMLHttpRequest();
                 client.open('POST', url, true);
                 client.onreadystatechange = function() {
@@ -981,13 +984,14 @@ export default {
                         that.loading = 2;
                         that.$emit('crop-upload-success', resData, field, ki);
                         setTimeout(function() {
-                            console.log('aquí cerramos bro');
+                            that.off();
                         }, 600);
                     }
 
                 }).catch(
                 // 上传失败
                 function(sts) {
+                    that.showControl = true
                     if (that.value) {
                         that.loading = 3;
                         that.hasError = true;
