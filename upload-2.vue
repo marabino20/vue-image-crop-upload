@@ -1544,14 +1544,18 @@ export default {
       margin-top: 20px;
       margin-left: auto;
       margin-right: auto;
-      width: 240px;
-      height: 160px;
+      width: 220px;
+      height: 140px;
     }
 
     .main-left, .main-right {
       width: 100%;
       border: 2px solid #eeeeee;
       border-radius: 20px;
+    }
+
+    .main-right {
+      margin-top: 16px
     }
 
     .vue-image-crop-upload {
