@@ -1577,6 +1577,7 @@ export default {
     h1.main-title {
       font-size: 1.2em;
       margin-bottom: 0px;
+      margin: 0px;
       padding: 10px;
       border-radius: 18px 18px 0px 0px;
     }
@@ -1597,7 +1598,7 @@ h1.main-title {
   font-size: 1.1em;
   color: #ffffff;
   background-color: #00897b;
-  margin-bottom: 16px;
+  margin: 0px 0px 16px 0px;
   padding: 5px;
   border-radius: 18px 18px 0px 0px;
 }
