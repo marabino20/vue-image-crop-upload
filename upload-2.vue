@@ -561,15 +561,16 @@ export default {
         }
     },
     watch: {
+        step(newValue) {
+            if (newValue === 1) {
+                document.getElementById('main-drop-area').click();
+            }
+        },
         value(newValue) {
             if (newValue && this.loading != 1) {
                 this.reset();
             }
         }
-    },
-    mounted () {
-      console.log(document.getElementById('main-drop-area'));
-      document.getElementById('main-drop-area').click();
     },
     methods: {
         // 点击波纹效果
