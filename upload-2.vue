@@ -1448,7 +1448,9 @@ export default {
             -ms-user-select: none;
                 user-select: none; }
         .vue-image-crop-upload .vicp-wrap .vicp-operate a:hover {
-          background-color: rgba(0, 0, 0, 0.03); }
+          background-color: #dddddd;
+          color: #777777;
+          text-decoration: none; }
     .vue-image-crop-upload .vicp-wrap .vicp-error,
     .vue-image-crop-upload .vicp-wrap .vicp-success {
       display: block;
@@ -1545,7 +1547,7 @@ export default {
       width: 100% !important;
       height: 100% !important;
     }
-    
+
     .vue-image-crop-upload .vicp-wrap {
       width: 100% !important;
       height: 100% !important;
