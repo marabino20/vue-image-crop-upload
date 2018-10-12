@@ -561,13 +561,11 @@ export default {
         }
     },
     watch: {
-        step(newValue) {
-            console.log(newValue, 'step')
-            if (newValue == 1) {
+        value(newValue) {
+            console.log(newValue, ' value ', this.step, ' step')
+            if (newValue && this.step === 1) {
                 document.getElementById('main-drop-area').click();
             }
-        },
-        value(newValue) {
             if (newValue && this.loading != 1) {
                 this.reset();
             }
