@@ -562,7 +562,6 @@ export default {
     },
     watch: {
         value(newValue) {
-            console.log(newValue, ' value ', this.step, ' step')
             if (newValue && this.step === 1) {
                 document.getElementById('main-drop-area').click();
             }
@@ -981,6 +980,9 @@ export default {
                     if (that.value) {
                         that.loading = 2;
                         that.$emit('crop-upload-success', resData, field, ki);
+                        setTimeout(function() {
+                            console.log('aquí cerramos bro');
+                        }, 600);
                     }
 
                 }).catch(
