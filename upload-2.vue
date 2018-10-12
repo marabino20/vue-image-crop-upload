@@ -562,7 +562,8 @@ export default {
     },
     watch: {
         step(newValue) {
-            if (newValue === 1) {
+            console.log(newValue, 'step')
+            if (newValue == 1) {
                 document.getElementById('main-drop-area').click();
             }
         },
