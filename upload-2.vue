@@ -1051,7 +1051,7 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
-    width: 600px;
+    width: 568px;
     height: 330px;
     padding: 25px;
     background-color: #fff;
