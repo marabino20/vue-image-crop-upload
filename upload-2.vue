@@ -568,7 +568,8 @@ export default {
         }
     },
     mounted () {
-      document.getElementById("main-drop-area").click();
+      console.log(document.getElementById('main-drop-area'));
+      document.getElementById('main-drop-area').click();
     },
     methods: {
         // 点击波纹效果
