@@ -1599,7 +1599,7 @@ export default {
 }
 
 .vicp-img-container img {
-  max-width: 400% !important;
+  max-width: 600% !important;
 }
 
 h1.main-title {
