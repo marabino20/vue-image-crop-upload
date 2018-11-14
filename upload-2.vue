@@ -273,7 +273,7 @@ export default {
         // 语言类型
         langType: {
             type: String,
-            'default': 'zh'
+            'default': 'es'
         },
         // 语言包
         langExt: {
@@ -383,7 +383,7 @@ export default {
                 }
             },
             tempImgFormat = allowImgFormat.indexOf(imgFormat) === -1 ? 'jpg' : imgFormat,
-            lang = langBag[langType] ? langBag[langType] : lang['zh'],
+            lang = langBag[langType] ? langBag[langType] : lang['es'],
             mime = mimes[tempImgFormat];
         // 规范图片格式
         that.imgFormat = tempImgFormat;
