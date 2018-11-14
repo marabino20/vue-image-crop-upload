@@ -383,7 +383,7 @@ export default {
                 }
             },
             tempImgFormat = allowImgFormat.indexOf(imgFormat) === -1 ? 'jpg' : imgFormat,
-            lang = langBag[langType] ? langBag[langType] : lang['es'],
+            lang = langBag[langType] ? langBag[langType] : langBag['es'],
             mime = mimes[tempImgFormat];
         // 规范图片格式
         that.imgFormat = tempImgFormat;
